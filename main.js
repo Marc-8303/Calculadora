@@ -22,11 +22,12 @@ function clearDisplay() {
 
 function calculate() {
     try {
+        currentInput = currentInput.replace(/\^/g, '**');
         currentInput = currentInput.replace(/sqrt/g, 'Math.sqrt');
         currentInput = eval(currentInput).toString();
         updateDisplay();
     } catch (error) {
-        currentInput = 'Error de sintaxis';
+        currentInput = 'Error en la sintaxis';
         updateDisplay();
     }
 }
