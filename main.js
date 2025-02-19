@@ -10,6 +10,11 @@ function appendOperator(operator) {
     updateDisplay();
 }
 
+function appendFunction(func) {
+    currentInput += func + '(';
+    updateDisplay();
+}
+
 function clearDisplay() {
     currentInput = '';
     updateDisplay();
@@ -17,10 +22,11 @@ function clearDisplay() {
 
 function calculate() {
     try {
+        currentInput = currentInput.replace(/sqrt/g, 'Math.sqrt');
         currentInput = eval(currentInput).toString();
         updateDisplay();
     } catch (error) {
-        currentInput = 'Error';
+        currentInput = 'Error de sintaxis';
         updateDisplay();
     }
 }
