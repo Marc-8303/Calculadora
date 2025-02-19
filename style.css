@@ -7,7 +7,7 @@ body {
 }
 
 .calculadora {
-    background-color: #8f7c7c;
+    background-color: #1a1616;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -34,4 +34,16 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+}
+
+.botones button {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
