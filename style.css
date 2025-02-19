@@ -15,5 +15,21 @@ body {
 
 .resultado {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.resultado input {
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    border: none;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.botones {
+    display: grid;
 }
