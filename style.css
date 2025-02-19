@@ -28,6 +28,8 @@ body {
     color: black;
     background-color: white;
     border-radius: 10px;
+    height: 6vh;
+    font-size: larger;
 }
 
 .botones {
