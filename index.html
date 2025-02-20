@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
 <div class="calculadora">
   <div class="resultado">
     <input type="text" id="resultado" placeholder="Inserta un numero 🤑" disabled>
@@ -36,13 +37,14 @@
     <button onclick="appendNumber('1')">1</button>
     <button onclick="appendNumber('2')">2</button>
     <button onclick="appendNumber('3')">3</button>
-    <button onclick="calculate()" style="background-color: #ea7e18">=</button>
+    <button onclick="calculate()" style="background-color: #ea7e18; grid-row: span 2;">=</button>
     <button onclick="backspace()" style="background-color: gray"><-</button>
     <button onclick="appendNumber('0')" >0</button>
     <button onclick="appendNumber('.')" style="background-color: gray">.</button>
-    <button onclick="calculate()" style="background-color: #ea7e18">=</button>
+
   </div>
 </div>
+
 <script src="main.js"></script>
 </body>
 
