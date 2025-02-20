@@ -37,7 +37,7 @@ function calculate() {
         currentInput = eval(currentInput).toString();
         updateDisplay();
     } catch (error) {
-        currentInput = 'Error en la sintaxis';
+        currentInput = 'Error en la sintaxis 🤬';
         updateDisplay();
     }
 }
