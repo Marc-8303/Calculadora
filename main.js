@@ -1,7 +1,7 @@
 let currentInput = '';
 
 function appendNumber(number) {
-    if (currentInput === 'Error en la sintaxis') {
+    if (currentInput === 'Error en la sintaxis 🤬') {
         currentInput = '';
     }
     currentInput += number;
@@ -9,7 +9,7 @@ function appendNumber(number) {
 }
 
 function appendOperator(operator) {
-    if (currentInput === 'Error en la sintaxis') {
+    if (currentInput === 'Error en la sintaxis 🤬') {
         currentInput = '';
     }
     currentInput += operator;
@@ -17,7 +17,7 @@ function appendOperator(operator) {
 }
 
 function appendFunction(func) {
-    if (currentInput === 'Error en la sintaxis') {
+    if (currentInput === 'Error en la sintaxis 🤬') {
         currentInput = '';
     }
     currentInput += func + '(';
@@ -32,7 +32,7 @@ function clearDisplay() {
 function calculate() {
     try {
         currentInput = currentInput.replace(/\^/g, '**');
-        currentInput = currentInput.replace(/\√/g, 'Math.sqrt(');
+        currentInput = currentInput.replace(/\√/g, 'Math.sqrt');
 
         currentInput = eval(currentInput).toString();
         updateDisplay();
