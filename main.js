@@ -50,3 +50,16 @@ function backspace() {
     currentInput = currentInput.slice(0, -1);
     updateDisplay();
 }
+
+function buttonClickAnimation(event) {
+    const button = event.target;
+    button.classList.add('button-animate');
+    button.addEventListener('animationend', () => {
+        button.classList.remove('button-animate');
+    }, { once: true });
+}
+
+document.querySelectorAll('.botones button').forEach(button => {
+    button.addEventListener('click', buttonClickAnimation);
+});
+
