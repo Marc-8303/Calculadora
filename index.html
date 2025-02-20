@@ -17,26 +17,30 @@
     <input type="text" id="resultado" placeholder="Inserta un numero 🤑" disabled>
   </div>
   <div class="botones">
-    <button onclick="clearDisplay()">AC</button>
-    <button onclick="appendFunction('√')">√</button>
-    <button onclick="appendOperator('^')">^</button>
-    <button onclick="appendOperator('/')">/</button>
+    <button onclick="appendFunction('√')" style="background-color: #ea7e18">√</button>
+    <button onclick="appendOperator('^')" style="background-color: #ea7e18">^</button>
+    <button onclick="appendOperator('/')" style="background-color: #ea7e18">/</button>
+    <button onclick="appendOperator('*')" style="background-color: #ea7e18">*</button>
+    <button onclick="clearDisplay()" style="background-color: gray">AC</button>
+    <button onclick="appendNumber('(')" style="background-color: gray">(</button>
+    <button onclick="appendNumber(')')" style="background-color: gray">)</button>
+    <button onclick="appendOperator('%')" style="background-color: #ea7e18">%</button>
     <button onclick="appendNumber('7')">7</button>
     <button onclick="appendNumber('8')">8</button>
     <button onclick="appendNumber('9')">9</button>
-    <button onclick="appendOperator('*')">*</button>
+    <button onclick="appendOperator('-')" style="background-color: #ea7e18">-</button>
     <button onclick="appendNumber('4')">4</button>
     <button onclick="appendNumber('5')">5</button>
     <button onclick="appendNumber('6')">6</button>
-    <button onclick="appendOperator('+')">+</button>
+    <button onclick="appendOperator('+')" style="background-color: #ea7e18">+</button>
     <button onclick="appendNumber('1')">1</button>
     <button onclick="appendNumber('2')">2</button>
     <button onclick="appendNumber('3')">3</button>
-    <button onclick="appendOperator('-')">-</button>
-    <button onclick="backspace()"><-</button>
-    <button onclick="appendNumber('0')">0</button>
-    <button onclick="appendNumber('.')">.</button>
-    <button onclick="calculate()">=</button>
+    <button onclick="calculate()" style="background-color: #ea7e18">=</button>
+    <button onclick="backspace()" style="background-color: gray"><-</button>
+    <button onclick="appendNumber('0')" >0</button>
+    <button onclick="appendNumber('.')" style="background-color: gray">.</button>
+    <button onclick="calculate()" style="background-color: #ea7e18">=</button>
   </div>
 </div>
 <script src="main.js"></script>
