@@ -23,7 +23,8 @@ function clearDisplay() {
 function calculate() {
     try {
         currentInput = currentInput.replace(/\^/g, '**');
-        currentInput = currentInput.replace(/sqrt/g, 'Math.sqrt');
+        currentInput = currentInput.replace(/\√/g, 'Math.sqrt(');
+
         currentInput = eval(currentInput).toString();
         updateDisplay();
     } catch (error) {
@@ -34,4 +35,9 @@ function calculate() {
 
 function updateDisplay() {
     document.getElementById('resultado').value = currentInput;
+}
+
+function backspace() {
+    currentInput = currentInput.slice(0, -1);
+    updateDisplay();
 }
