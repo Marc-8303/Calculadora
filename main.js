@@ -66,9 +66,9 @@ document.querySelectorAll('.botones button').forEach(button => {
 
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    
+
     if (event.ctrlKey || event.altKey || event.metaKey) return;
-    
+
     const keyActions = {
         'Enter': () => calculate(),
         'Backspace': () => backspace(),
@@ -84,13 +84,13 @@ document.addEventListener('keydown', (event) => {
         '^': () => appendOperator('^'),
         '√': () => appendFunction('√')
     };
-    
+
     if (/[0-9]/.test(key)) {
         appendNumber(key);
     }
-    
+
     else if (keyActions[key]) {
-        event.preventDefault(); 
+        event.preventDefault();
         keyActions[key]();
     }
 });
