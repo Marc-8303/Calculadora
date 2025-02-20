@@ -63,3 +63,34 @@ document.querySelectorAll('.botones button').forEach(button => {
     button.addEventListener('click', buttonClickAnimation);
 });
 
+
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    
+    if (event.ctrlKey || event.altKey || event.metaKey) return;
+    
+    const keyActions = {
+        'Enter': () => calculate(),
+        'Backspace': () => backspace(),
+        'Escape': () => clearDisplay(),
+        '+': () => appendOperator('+'),
+        '-': () => appendOperator('-'),
+        '*': () => appendOperator('*'),
+        '/': () => appendOperator('/'),
+        '%': () => appendOperator('%'),
+        '(': () => appendNumber('('),
+        ')': () => appendNumber(')'),
+        '.': () => appendNumber('.'),
+        '^': () => appendOperator('^'),
+        '√': () => appendFunction('√')
+    };
+    
+    if (/[0-9]/.test(key)) {
+        appendNumber(key);
+    }
+    
+    else if (keyActions[key]) {
+        event.preventDefault(); 
+        keyActions[key]();
+    }
+});
