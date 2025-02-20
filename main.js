@@ -4,6 +4,12 @@ function appendNumber(number) {
     if (currentInput === 'Error en la sintaxis 🤬') {
         currentInput = '';
     }
+    if (currentInput === 'Infinity') {
+        currentInput = '';
+    }
+    if (currentInput === 'NaN') {
+        currentInput = '';
+    }
     currentInput += number;
     updateDisplay();
 }
@@ -12,12 +18,24 @@ function appendOperator(operator) {
     if (currentInput === 'Error en la sintaxis 🤬') {
         currentInput = '';
     }
+    if (currentInput === 'Infinity') {
+        currentInput = '';
+    }
+    if (currentInput === 'NaN') {
+        currentInput = '';
+    }
     currentInput += operator;
     updateDisplay();
 }
 
 function appendFunction(func) {
     if (currentInput === 'Error en la sintaxis 🤬') {
+        currentInput = '';
+    }
+    if (currentInput === 'Infinity') {
+        currentInput = '';
+    }
+    if (currentInput === 'NaN') {
         currentInput = '';
     }
     currentInput += func + '(';
@@ -62,7 +80,6 @@ function buttonClickAnimation(event) {
 document.querySelectorAll('.botones button').forEach(button => {
     button.addEventListener('click', buttonClickAnimation);
 });
-
 
 document.addEventListener('keydown', (event) => {
     const key = event.key;
