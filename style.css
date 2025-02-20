@@ -47,5 +47,27 @@ body {
     background-color: #444;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.botones button:hover {
+    transform: scale(1.1);
+    background-color: #555;
+}
+
+@keyframes button-click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.button-animate {
+    animation: button-click 0.2s ease-in-out;
 }
