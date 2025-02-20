@@ -1,9 +1,26 @@
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #1a1616;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .calculadora {
