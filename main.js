@@ -1,16 +1,25 @@
 let currentInput = '';
 
 function appendNumber(number) {
+    if (currentInput === 'Error en la sintaxis') {
+        currentInput = '';
+    }
     currentInput += number;
     updateDisplay();
 }
 
 function appendOperator(operator) {
+    if (currentInput === 'Error en la sintaxis') {
+        currentInput = '';
+    }
     currentInput += operator;
     updateDisplay();
 }
 
 function appendFunction(func) {
+    if (currentInput === 'Error en la sintaxis') {
+        currentInput = '';
+    }
     currentInput += func + '(';
     updateDisplay();
 }
