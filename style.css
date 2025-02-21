@@ -19,7 +19,7 @@ footer {
     color: white;
     text-align: center;
     padding: 1rem;
-    margin-top: auto; /* Empuja el footer hacia abajo */
+    margin-top: auto;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -46,7 +46,7 @@ footer {
     background-color: white;
     border-radius: 10px;
     height: 6vh;
-    font-size: larger;
+    font-size: 150%;
 }
 
 .botones {
