@@ -1,5 +1,17 @@
 let currentInput = '';
+let isDegreeMode = true;
 
+function toggleDegreeMode() {
+    isDegreeMode = !isDegreeMode;
+    document.getElementById("degreeToggle").textContent = isDegreeMode
+        ? "Deg" : "Rad";
+}
+
+function convertAngle(angle) {
+    return isDegreeMode ? `(${angle} * Math.PI/180)` : angle;
+}
+
+/**/
 function appendNumber(number) {
     if (currentInput === 'Error en la sintaxis 🤬') {
         currentInput = '';
@@ -49,8 +61,17 @@ function clearDisplay() {
 
 function calculate() {
     try {
-        currentInput = currentInput.replace(/\^/g, '**');
-        currentInput = currentInput.replace(/\√/g, 'Math.sqrt');
+        currentInput = currentInput
+            .replace(/\^/g, '**')
+            .replace(/\√/g, 'Math.sqrt')
+            .replace(/abs/g, 'Math.abs')
+            .replace(/sin\((.*?)\)/g, (match, angle) => `Math.sin(${convertAngle(angle)})`)
+            .replace(/cos\((.*?)\)/g, (match, angle) => `Math.cos(${convertAngle(angle)})`)
+            .replace(/tan\((.*?)\)/g, (match, angle) => `Math.tan(${convertAngle(angle)})`)
+            .replace(/cot\((.*?)\)/g, (match, angle) => `(1/Math.tan(${convertAngle(angle)}))`)
+            .replace(/sec\((.*?)\)/g, (match, angle) => `(1/Math.cos(${convertAngle(angle)}))`)
+            .replace(/csc\((.*?)\)/g, (match, angle) => `(1/Math.sin(${convertAngle(angle)}))`);
+
 
         currentInput = eval(currentInput).toString();
         updateDisplay();
@@ -81,6 +102,7 @@ document.querySelectorAll('.botones button').forEach(button => {
     button.addEventListener('click', buttonClickAnimation);
 });
 
+/*StackOverflow*/
 document.addEventListener('keydown', (event) => {
     const key = event.key;
 
