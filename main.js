@@ -50,7 +50,11 @@ function appendFunction(func) {
     if (currentInput === 'NaN') {
         currentInput = '';
     }
-    currentInput += func + '(';
+    if (func === 'logBase') {
+        currentInput += 'log(';
+    } else {
+        currentInput += func + '(';
+    }
     updateDisplay();
 }
 
@@ -70,8 +74,10 @@ function calculate() {
             .replace(/tan\((.*?)\)/g, (match, angle) => `Math.tan(${convertAngle(angle)})`)
             .replace(/cot\((.*?)\)/g, (match, angle) => `(1/Math.tan(${convertAngle(angle)}))`)
             .replace(/sec\((.*?)\)/g, (match, angle) => `(1/Math.cos(${convertAngle(angle)}))`)
-            .replace(/csc\((.*?)\)/g, (match, angle) => `(1/Math.sin(${convertAngle(angle)}))`);
-
+            .replace(/csc\((.*?)\)/g, (match, angle) => `(1/Math.sin(${convertAngle(angle)}))`)
+            .replace(/ln\((.*?)\)/g, `Math.log($1)`)
+            .replace(/log\((.*?)\)/g, `Math.log10($1)`)
+            .replace(/log\((.*?),(.*?)\)/g, `(Math.log($2)/Math.log($1))`);
 
         currentInput = eval(currentInput).toString();
         updateDisplay();
@@ -133,3 +139,19 @@ document.addEventListener('keydown', (event) => {
         keyActions[key]();
     }
 });
+
+function openTrigModal() {
+    document.getElementById('trigModal').style.display = 'block';
+}
+
+function closeTrigModal() {
+    document.getElementById('trigModal').style.display = 'none';
+}
+
+function openLogModal() {
+    document.getElementById('logModal').style.display = 'block';
+}
+
+function closeLogModal() {
+    document.getElementById('logModal').style.display = 'none';
+}
