@@ -88,3 +88,11 @@ footer {
 .button-animate {
     animation: button-click 0.2s ease-in-out;
 }
+
+#degreeToggle {
+    transition: background-color 0.3s;
+}
+
+#degreeToggle:hover {
+    background-color: gray !important;
+}
