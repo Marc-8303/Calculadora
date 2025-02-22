@@ -26,13 +26,9 @@
     <button onclick="appendOperator('^')" style="background-color: #ea7e18">^</button>
     <button onclick="appendOperator('/')" style="background-color: #ea7e18">/</button>
     <button onclick="appendOperator('*')" style="background-color: #ea7e18">*</button>
-    <button onclick="appendFunction('sin')" style="background-color: gray">sin</button>
-    <button onclick="appendFunction('cos')" style="background-color: gray">cos</button>
-    <button onclick="appendFunction('tan')" style="background-color: gray">tan</button>
-    <button onclick="toggleDegreeMode()" style="background-color: #ea7e18" id="degreeToggle">Rad</button>
-    <button onclick="appendFunction('cot')" style="background-color: gray">cot</button>
-    <button onclick="appendFunction('sec')" style="background-color: gray">sec</button>
-    <button onclick="appendFunction('csc')" style="background-color: gray">csc</button>
+    <button onclick="toggleDegreeMode()" style="background-color: gray" id="degreeToggle">Rad</button>
+    <button onclick="openTrigModal()" style="background-color: gray">Trig</button>
+    <button onclick="openLogModal()" style="background-color: gray">Log</button>
     <button onclick="appendFunction('abs')" style="background-color: #ea7e18">|x|</button>
     <button onclick="clearDisplay()" style="background-color: gray">AC</button>
     <button onclick="appendNumber('(')" style="background-color: gray">(</button>
@@ -55,7 +51,31 @@
     <button onclick="appendNumber('.')" style="background-color: gray">.</button>
   </div>
 </div>
+<div id="trigModal" class="modal">
+  <div class="modal-content">
+    <div class="botones" onclick="closeTrigModal()">
+      <button onclick="appendFunction('sin') && closeTrigModal()" style="background-color: #ea7e18">sin</button>
+      <button onclick="appendFunction('cos') && closeTrigModal()" style="background-color: #ea7e18">cos</button>
+      <button onclick="appendFunction('tan') && closeTrigModal()" style="background-color: #ea7e18">tan</button>
+      <span class="close" onclick="closeTrigModal()"> <br>&times;</span>
+      <button onclick="appendFunction('cot') && closeTrigModal()" style="background-color: #ea7e18">cot</button>
+      <button onclick="appendFunction('sec') && closeTrigModal()" style="background-color: #ea7e18">sec</button>
+      <button onclick="appendFunction('csc') && closeTrigModal()" style="background-color: #ea7e18">csc</button>
+    </div>
+    <br>
+  </div>
+</div>
+<div id="logModal" class="modal">
+  <div class="modal-content">
+    <div class="botones" onclick="closeLogModal()">
+      <button onclick="appendFunction('ln') && closeTrigModal()" style="background-color: #ea7e18">Ln</button>
+      <button onclick="appendFunction('log') && closeTrigModal()" style="background-color: #ea7e18">Log</button>
+      <button onclick="appendFunction('logBase') && closeTrigModal()" style="background-color: #ea7e18">Logₐ</button>
+      <span class="close" onclick="closeLogModal()" style=""> &times;</span>
+    </div>
+    <br>
+  </div>
+</div>
 <script src="main.js"></script>
 </body>
-
 </html>
