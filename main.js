@@ -155,3 +155,11 @@ function openLogModal() {
 function closeLogModal() {
     document.getElementById('logModal').style.display = 'none';
 }
+
+function openParModal() {
+    document.getElementById('parModal').style.display = 'block';
+}
+
+function closeParModal() {
+    document.getElementById('parModal').style.display = 'none';
+}
